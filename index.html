@@ -17,12 +17,36 @@
 	<h3>Atributo title en un enlace</h3>
 	<p>Debemos describir resumidamente el contenido de la página enlazada. Mostrará un recuadro pequeño con la descripción dada al poner el cursor sobre el enlace.</p>
 	<p>Para los dispositivos moviles no funciona, si esta descripción es muy importante para el uso, debemos escribirla en el enlace.</p>
+	
+	<code>
+		<!--
+			<p>
+			  Crea un enlace a
+			  <a
+			    href="https://www.mozilla.org/es-ES/"
+			    title="El mejor lugar para encontrar más información acerca de la misión de Mozilla
+			    y cómo contribuir"
+			    >la página de inicio de Mozilla</a>.
+			</p>
 
+		 -->
+	</code>
+	
 	<h3>Convertir una imagen en un enlace</h3>
 	<p>Cualquier cosa se puede convertir en un enlace si se lo incluye dentro de sus etiquetas.</p>
 
 	<p>Encerramos el elemento <a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/img">img</a>, dentro de <em>a</em>. La etiqueta de apertura de imagen tiene el atributo <em>src</em> en el tambien indicamos la dirección donde está la imagen</p>
-
+	<code>
+		<!--
+			<a href="https://www.mozilla.org/es-ES/">
+			  <img
+			    src="mozilla-image.png"
+			    alt="Logotipo de Mozilla que dirige a la página inicial de Mozilla"
+			  />
+			</a>
+		-->
+	</code>
+	
 	<h2>Buenas practicas para el uso de enlaces</h2>
 	<p>Hay una serie de comportamientos de los usuarios y buscadores con respecto a los enlace a tener en cuenta:</p>
 	<ul>
@@ -43,11 +67,30 @@
 
 	<h3>Usar el atributo download para indicar una descarga</h3>
 	<p>Se usa para darle un nombre al archivo que el usuario va a descargar</p>
+	<code>
+		<!--
+		<a
+		  href="https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=es-MX"
+
+		  download="firefox-latest-64bit-installer.exe">
+		  Descarga la última versión de Firefox para Windows (64 bits) (Español, es-MX)
+		</a>
+		-->
+	</code>
 
 	<h3>Ir hacia una parte de la página</h3>
 	<p>Con el atributo <em>id</em> podemos movernos por los encabezados o secciones de una página.</p>
 	<p>El primer paso es describir el nombre del encabezado en el valor del atributo (sin espacios/con guiones), el segundo paso es crear un link con la dirección de la página + #valor-id/seccion-de-la-página.</p>
 	<p>En el texto de este link vemos una referencia sutil a la sección a la que queremos enviar al usuario.</p>
+	<code>
+		<!--
+			<h2 id="Dirección_de_envío">Dirección de envío</h2>
+			<p>
+			  ¿Quieres mandarnos una carta? Aquí tienes nuestra
+			  <a href="contacts.html#Dirección_de_envío">Dirección de envío</a>.
+			</p>
+		-->
+	</code>	
 
 	<h2>Tratamiento para URLs y rutas locales y externas</h2>
 	<p>Las <em>URLs</em> (<i>Uniform Resource Locator</i>) definen donde esta situado un recurso en la web.</p>
@@ -63,7 +106,19 @@
 		<li>Bajando un directorio: Si nos situamos en el archivo de arriba de todo y en este queremos enlazar algún documento que esta <em>suelto</em> abajo, <span>../archivo.html</span>. Si el archivo al que queremos llegar esta dentro de una carpeta, <span>../nombre-de-carpeta/archivo.html</span>.</li>
 	</ul>
 	<p>Si entendemos que página de inicio está arriba de todo: Con <span>../nombre-archivo-o-carpeta</span> subimos de directorio y con <span>/nombre-archivo-o-carpeta</span> bajamos.</p>
+	<code>
+		<!--
+			raiz:
+			<a href="contacts.html"></a>
 
+			bajando:
+			<a href="projects/index.html"></a>
+
+			subiendo:
+			<a href="../pdfs/project-brief.pdf"></a>
+		-->
+	</code>
+	
 	<h3>URLs relativas y absolutas</h3>
 	<p>Se diferencian por su ubicación y tamaño (partes de una URL).</p>
 	<ul>
@@ -83,11 +138,24 @@
 	<p>En el atributo href de un enlace podemos poner una direccion de correo. Antes del correo va la palabra <span>mailto:</span>. Finalmente en la descripción del enlace ponemos hacia quién va ir el mail.</p>
 	<p>Cuando el usuario haga click en el enlace, el navegador abrirá el cliente de correo electronico o el gmail para que redacte el mail.</p>
 	<p>Si omitimos la direccion de correo y solo ponemos <span>href="mailto:"</span>, se abrirá el cliente de correo y los usuarios podrán elegir el destinatario que quieran.</p>
-
+	<code>
+		<!--
+			<a href="mailto:nowhere@mozilla.org"
+			  >Enviar correo electrónico a ninguna parte</a>
+		 -->
+	</code>	
+	
 	<h3>Incluir asunto, copia, copia oculta y cuerpo del mensaje</h3>
 	<p><em>subject</em> (asunto), <em>cc</em> (copia -otro mail-), <em>bcc</em> (copia oculta) y <em>body</em> (cuerpo para un breve mensaje). Para usar estos campos en la url, se necesitan unos caracteres especiales.</p>
 	<p>El <a href="https://es.wikipedia.org/wiki/C%C3%B3digo_porciento">Código porcentual</a> se usan para los espacios, el <em>signo de interrogacion</em> (?) es para separar las URLs de los campos (subject, cc, bcc, etc), el <em>signo de ampersand</em> (&) es para separar los campos del enlace "mailto:".</p>
+	<code>
+		<!--
+			<a href="mailto:nowhere@mozilla.org?cc=name2@rapidtables.com&bcc=name3@rapidtables.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">
+			  Enviar un correo electrónico cc, bcc, asunto y cuerpo
+			</a>
 
+		-->
+	</code>
 
 
 
